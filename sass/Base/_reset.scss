@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header, section, footer, aside, nav, main, article, figure{
+    display: block; 
+}
+
+html, body{
+    font-family: 'SF Text Regular', sans-serif;
+    font-size: 16px;
+}
+
+.clear{
+    clear: both;
+}

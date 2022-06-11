@@ -1,0 +1,1561 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header, section, footer, aside, nav, main, article, figure {
+  display: block;
+}
+
+html, body {
+  font-family: 'SF Text Regular', sans-serif;
+  font-size: 16px;
+}
+
+.clear {
+  clear: both;
+}
+
+header {
+  position: fixed;
+  top: -1px;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  z-index: 9;
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+header .header__content .header__left .header__webLogo {
+  text-decoration: none;
+}
+
+header .header__content .header__left .header__webLogo img {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  width: 50px;
+}
+
+header .header__content .header__center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+header .header__content .header__center .header__text {
+  color: #000000;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: 'SF Regular', sans-serif;
+  margin-right: 20px;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+header .header__content .header__center .header__text:hover {
+  color: #fa5238;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+header .header__content .header__right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 15px;
+}
+
+header .header__content .header__right .header__account {
+  display: inline;
+}
+
+header .header__content .header__right .header__logIn {
+  position: relative;
+  padding-right: 11px;
+  cursor: pointer;
+}
+
+header .header__content .header__right .header__logIn::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  height: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-right: 1px solid #fff;
+  border-right-color: #e9e9e9;
+}
+
+header .header__content .header__right .header__logIn .header__avatar {
+  width: 30px;
+  border-radius: 50%;
+}
+
+header .header__content .header__right .header__logIn .header__sigIn {
+  color: #9b9b9b;
+  font-size: 13px;
+  font-weight: 500;
+  padding-left: 3px;
+}
+
+header .header__content .header__right .header__logIn .header__sigIn:hover {
+  text-decoration: none;
+}
+
+header .header__content .header__right .header__location {
+  position: relative;
+  font-family: 'SF Text Regular', sans-serif;
+  padding-right: 5px;
+}
+
+header .header__content .header__right .header__location .place-header {
+  position: absolute;
+  opacity: 0.5;
+  padding-left: 8px;
+  top: 8%;
+}
+
+header .header__content .header__right .header__location .dropdown-toggle {
+  color: #9b9b9b;
+  font-size: 13px;
+  font-weight: 500;
+  top: 2%;
+  display: inline-block;
+  cursor: pointer;
+  background-image: url(../../img/dropdown-icon.png);
+  background-repeat: no-repeat;
+  background-position: calc(100%);
+  padding-left: 35px;
+  padding-right: 38px;
+}
+
+header .header__content .header__right .header__location .dropdown-toggle::after {
+  display: none;
+}
+
+header .header__content .header__right .header__location .dropdown-menu {
+  background: #fff !important;
+  top: 115% !important;
+  min-width: 160px;
+}
+
+header .header__content .header__right .header__location .dropdown-menu .ng-scope .ng-bingding {
+  color: #000000;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 3px 20px;
+}
+
+header .header__content .header__right .header__location .dropdown-menu .ng-scope .ng-bingding:hover {
+  text-decoration: none;
+}
+
+header .header__content .header__right .header__location .selectScroll {
+  max-height: 300px;
+  overflow-y: scroll;
+}
+
+header .header__content .header__right .header__location .selectScroll::-webkit-scrollbar {
+  width: 4px;
+}
+
+header .header__content .header__right .header__location .selectScroll::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+header .header__content .header__right .header__location .selectScroll::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+@media screen and (max-width: 768px) {
+  header .header__content .header__left, header .header__content .header__center, header .header__content .header__right {
+    display: none;
+  }
+  header .header__content .header__leftMobile, header .header__content .header__rightMobile {
+    display: initial;
+  }
+  header .header__content .header__leftMobile img {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    width: 50px;
+  }
+  header .header__content .header__rightMobile {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    width: 55px;
+    z-index: 1;
+  }
+  header .header__content .header__rightMobile img {
+    width: 100%;
+  }
+  header .header__content .header__rightMobile:focus {
+    outline: none;
+  }
+}
+
+.carousel {
+  margin-top: 60px;
+  height: 654px;
+}
+
+.carousel .carousel__content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel .carousel__content .tixCarousel .carousel-indicators {
+  position: absolute;
+  bottom: 10%;
+  z-index: 5;
+}
+
+.carousel .carousel__content .tixCarousel .carousel-indicators li {
+  margin-right: 5px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #d8d8d8;
+  opacity: 1;
+}
+
+.carousel .carousel__content .tixCarousel .carousel-indicators li.active {
+  background-color: #fb4226;
+}
+
+.carousel .carousel__content .tixCarousel .carousel-inner {
+  height: 100%;
+}
+
+.carousel .carousel__content .tixCarousel .carousel-inner .carousel-item {
+  height: 100%;
+}
+
+.carousel .carousel__content .tixCarousel .carousel-inner .carousel-item img {
+  height: 100%;
+}
+
+.carousel .carousel__content .tixCarousel .carousel-inner .carousel-item .carousel__bg {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  background: linear-gradient(to top, #000, transparent 20%);
+}
+
+.carousel .carousel__content .tixCarousel .carousel-inner .carousel-item .carousel__button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  z-index: 3;
+  border: none;
+  background: 0 0;
+  transition: all 0.2s;
+  opacity: 0;
+}
+
+.carousel .carousel__content .tixCarousel .carousel-inner .carousel-item .carousel__button:hover {
+  opacity: 0.7 !important;
+}
+
+.carousel .carousel__content .tixCarousel .carousel-inner .carousel-item:hover .carousel__button {
+  opacity: 1;
+}
+
+.carousel .carousel__content .tixCarousel .carousel-inner .carousel-control-prev,
+.carousel .carousel__content .tixCarousel .carousel-inner .carousel-control-next {
+  width: 100px;
+}
+
+.carousel .carousel__content .tixCarousel .carousel-inner .carousel-control-prev .carousel-control-prev-icon,
+.carousel .carousel__content .tixCarousel .carousel-inner .carousel-control-next .carousel-control-prev-icon {
+  background-image: url(../../img/back-session.png);
+}
+
+.carousel .carousel__content .tixCarousel .carousel-inner .carousel-control-prev .carousel-control-next-icon,
+.carousel .carousel__content .tixCarousel .carousel-inner .carousel-control-next .carousel-control-next-icon {
+  background-image: url(../../img/next-session.png);
+}
+
+.carousel .carousel__content .tixCarousel .carousel-inner .carousel-control-prev .button,
+.carousel .carousel__content .tixCarousel .carousel-inner .carousel-control-next .button {
+  width: 50px;
+  height: 50px;
+}
+
+.carousel .carousel__selectMovie {
+  max-width: 940px;
+  margin: auto;
+  height: 80px;
+  position: absolute;
+  width: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+
+.carousel .carousel__selectMovie .widthByPercent {
+  width: 20%;
+  float: left;
+  position: relative;
+  height: 100%;
+}
+
+.carousel .carousel__selectMovie .widthByPercent::after {
+  content: " ";
+  position: absolute;
+  right: 0;
+  height: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  border-right: 1px solid rgba(238, 238, 238, 0.88);
+}
+
+.carousel .carousel__selectMovie .widthByPercent .dropdown-toggle::after {
+  display: none;
+}
+
+.carousel .carousel__selectMovie .widthByPercent .selectMenu {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  color: #000000;
+  cursor: pointer;
+  width: 100%;
+  padding: 7%;
+  background-image: url(../../img/dropdown-icon.png);
+  background-repeat: no-repeat;
+  background-position: calc(100% - 8px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-right: 20px;
+  font-size: 14px;
+}
+
+.carousel .carousel__selectMovie .widthByPercent .buyTicket {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #4a4a4a;
+  border: none;
+  padding: 10px 25px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.carousel .carousel__selectMovie .widthByPercent .selectSroll {
+  max-height: 300px;
+  overflow-y: scroll;
+}
+
+.carousel .carousel__selectMovie .widthByPercent .selectSroll::-webkit-scrollbar {
+  width: 4px;
+}
+
+.carousel .carousel__selectMovie .widthByPercent .selectSroll::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+.carousel .carousel__selectMovie .widthByPercent .selectSroll::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.carousel .carousel__selectMovie .widthByPercent .dropdown-menu {
+  z-index: 1000;
+  min-width: 160px;
+  font-size: 14px;
+  padding: 5px 0;
+  margin-top: 2px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  transform: translate3d(0px, 70px, 0px) !important;
+}
+
+.carousel .carousel__selectMovie .widthByPercent .dropdown-menu .ng-scope a {
+  display: block;
+  color: #000000;
+  font-weight: 400;
+  white-space: nowrap;
+  padding: 3px 20px;
+  transition: all 0.2s;
+}
+
+.carousel .carousel__selectMovie .widthByPercent .dropdown-menu .ng-scope a:hover {
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #60c5ef;
+}
+
+.carousel .carousel__selectMovie .w30p {
+  width: 30%;
+}
+
+.carousel .carousel__selectMovie .smallBlock {
+  width: calc(70% / 4);
+}
+
+@media screen and (max-width: 992px) {
+  .carousel .carousel__content .tixCarousel .carousel-indicators li {
+    margin-right: 3px;
+    width: 10px;
+    height: 10px;
+  }
+  .carousel .carousel__content .tixCarousel .carousel-inner .carousel-item .carousel__button img {
+    width: 70px;
+  }
+  .carousel .carousel__content .tixCarousel .carousel-control-prev, .carousel .carousel__content .tixCarousel .carousel-control-next {
+    width: 60px;
+  }
+  .carousel .carousel__content .tixCarousel .carousel-control-prev .button, .carousel .carousel__content .tixCarousel .carousel-control-next .button {
+    width: 30px;
+    height: 30px;
+  }
+  .carousel .carousel__selectMovie {
+    max-width: 840px;
+    height: 70px;
+  }
+  .carousel .carousel__selectMovie .widthByPercent .buyTicket {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+  .carousel .carousel__selectMovie .widthByPercent .selectMenu {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .carousel .carousel__content .tixCarousel .carousel-indicators li {
+    margin-right: 2px;
+    width: 8px;
+    height: 8px;
+  }
+  .carousel .carousel__content .tixCarousel .carousel-inner .carousel-item .carousel__button img {
+    width: 50px;
+  }
+  .carousel .carousel__content .tixCarousel .carousel-control-prev, .carousel .carousel__content .tixCarousel .carousel-control-next {
+    width: 45px;
+  }
+  .carousel .carousel__content .tixCarousel .carousel-control-prev .button, .carousel .carousel__content .tixCarousel .carousel-control-next .button {
+    width: 20px;
+    height: 20px;
+  }
+  .carousel .carousel__selectMovie {
+    max-width: 700px;
+    height: 60px;
+  }
+  .carousel .carousel__selectMovie .widthByPercent .buyTicket {
+    padding: 7px 12px;
+    font-size: 10px;
+  }
+  .carousel .carousel__selectMovie .widthByPercent .selectMenu {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .carousel .carousel__content .tixCarousel .carousel-indicators li {
+    margin-right: 1px;
+    width: 5px;
+    height: 5px;
+  }
+  .carousel .carousel__content .tixCarousel .carousel-inner .carousel-item .carousel__button img {
+    width: 30px;
+  }
+  .carousel .carousel__content .tixCarousel .carousel-control-prev, .carousel .carousel__content .tixCarousel .carousel-control-next {
+    width: 30px;
+  }
+  .carousel .carousel__content .tixCarousel .carousel-control-prev .button, .carousel .carousel__content .tixCarousel .carousel-control-next .button {
+    width: 18px;
+    height: 18px;
+  }
+  .carousel .carousel__selectMovie {
+    max-width: 500px;
+    height: 50px;
+  }
+  .carousel .carousel__selectMovie .widthByPercent .buyTicket {
+    padding: 5px 10px;
+    font-size: 8px;
+  }
+  .carousel .carousel__selectMovie .widthByPercent .selectMenu {
+    font-size: 8px;
+  }
+}
+
+.calendar .calendar__bg {
+  padding: 80px 0 0;
+}
+
+.calendar .calendar__bg .calendar__content {
+  max-width: 940px;
+  margin: auto;
+}
+
+.calendar .calendar__bg .calendar__content .nav-pills {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px !important;
+}
+
+.calendar .calendar__bg .calendar__content .nav-pills .nav-item .nav-link {
+  font-family: "SF Medium", sans-serif;
+  background-color: #ffffff;
+  color: #000000;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  transition: all 0.2s;
+}
+
+.calendar .calendar__bg .calendar__content .nav-pills .nav-item .nav-link.active {
+  color: #fa5238;
+  font-size: 24px;
+}
+
+.calendar .calendar__bg .calendar__content .nav-pills .nav-item .nav-link:hover {
+  font-size: 24px;
+}
+
+.calendar .calendar__bg .calendar__content .tab-pane .owl-item .row {
+  width: 100%;
+  margin: 0;
+}
+
+.calendar .calendar__bg .calendar__content .tab-pane .owl-item .row .col-12 {
+  padding: 0;
+}
+
+.calendar .calendar__bg .calendar__content .tab-pane .owl-item .row .col-12 .row {
+  width: 100%;
+  margin: 0;
+}
+
+.calendar .calendar__bg .calendar__content .tab-pane .owl-item .row .col-12 .row .calendar__col3 {
+  padding: 0 10px;
+  width: 25%;
+}
+
+.calendar .calendar__bg .calendar__content .tab-pane .owl-item .row .col-12 .row .calendar__col3 .calendar__film {
+  margin-bottom: 25px;
+  cursor: pointer;
+}
+
+.calendar .calendar__bg .calendar__content .tab-pane .owl-item .row .col-12 .row .calendar__col3 .calendar__film:hover .calendar__picture .calendar__filmThumbnail .calendar__overlay {
+  opacity: 1;
+}
+
+.calendar .calendar__bg .calendar__content .tab-pane .owl-item .row .col-12 .row .calendar__col3 .calendar__film:hover .calendar__text .calendar__nameFilm {
+  opacity: 0;
+}
+
+.calendar .calendar__bg .calendar__content .tab-pane .owl-item .row .col-12 .row .calendar__col3 .calendar__film:hover .calendar__text .calendar__time {
+  opacity: 0;
+}
+
+.calendar .calendar__bg .calendar__content .tab-pane .owl-item .row .col-12 .row .calendar__col3 .calendar__film:hover .calendar__text .cinemas__showHover .cine__btn {
+  opacity: 1;
+}
+
+.calendar .calendar__bg .calendar__content .tab-pane .owl-item .row .col-12 .row .calendar__col3 .calendar__film .calendar__picture .calendar__filmThumbnail {
+  display: block;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  padding-top: 148%;
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  position: relative;
+}
+
+.calendar .calendar__bg .calendar__content .tab-pane .owl-item .row .col-12 .row .calendar__col3 .calendar__film .calendar__picture .calendar__filmThumbnail .calendar__overlay {
+  position: absolute;
+  top: 0;
+  background: linear-gradient(to top, #000, transparent 100%);
+  border-radius: 4px;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all 0.2s;
+}
+
+.calendar .calendar__bg .calendar__content .tab-pane .owl-item .row .col-12 .row .calendar__col3 .calendar__film .calendar__picture .calendar__filmThumbnail .calendar__overlay .playTrailer {
+  background: none;
+  border: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+}
+
+.calendar .calendar__bg .calendar__content .tab-pane .owl-item .row .col-12 .row .calendar__col3 .calendar__film .calendar__picture .calendar__filmThumbnail .calendar__overlay .playTrailer:hover {
+  opacity: 0.7;
+}
+
+.calendar .calendar__bg .calendar__content .tab-pane .owl-item .row .col-12 .row .calendar__col3 .calendar__film .calendar__picture .calendar__filmThumbnail .calendar__avgPoint {
+  font-family: "SF Medium", sans-serif;
+  font-weight: 600;
+  background-color: rgba(12, 27, 54, 0.8);
+  border: 1px solid #1f2e46;
+  border-radius: 4px;
+  line-height: 1;
+  display: inline-block;
+  padding: 2px;
+  width: 54px;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+
+.calendar .calendar__bg .calendar__content .tab-pane .owl-item .row .col-12 .row .calendar__col3 .calendar__film .calendar__picture .calendar__filmThumbnail .calendar__avgPoint .calendar__point {
+  font-size: 20px;
+  text-align: center;
+  color: #ffffff;
+  margin: 0;
+}
+
+.calendar .calendar__bg .calendar__content .tab-pane .owl-item .row .col-12 .row .calendar__col3 .calendar__film .calendar__picture .calendar__filmThumbnail .calendar__avgPoint .calendar__star {
+  text-align: center;
+  margin: 0;
+}
+
+.calendar .calendar__bg .calendar__content .tab-pane .owl-item .row .col-12 .row .calendar__col3 .calendar__film .calendar__picture .calendar__filmThumbnail .calendar__avgPoint .calendar__star img {
+  display: inline-block;
+  max-width: 8px;
+  width: 100%;
+}
+
+.calendar .calendar__bg .calendar__content .tab-pane .owl-item .row .col-12 .row .calendar__col3 .calendar__film .calendar__text .calendar__nameFilm {
+  font-family: "SF Medium", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 22px;
+  margin: 0;
+  height: 42px;
+  max-height: 42px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+}
+
+.calendar .calendar__bg .calendar__content .tab-pane .owl-item .row .col-12 .row .calendar__col3 .calendar__film .calendar__text .calendar__nameFilm .calendar__nameFilm1 {
+  font-size: 14px;
+  background-color: #fb4226;
+  border-radius: 4px;
+  padding: 0 5px;
+  color: #fff;
+  min-width: 33px;
+  text-align: center;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.calendar .calendar__bg .calendar__content .tab-pane .owl-item .row .col-12 .row .calendar__col3 .calendar__film .calendar__text .calendar__nameFilm .ageType-general {
+  background-color: #00ac4d;
+}
+
+.calendar .calendar__bg .calendar__content .tab-pane .owl-item .row .col-12 .row .calendar__col3 .calendar__film .calendar__text .calendar__time {
+  font-size: 13px;
+  font-weight: 500;
+  margin: 8px 0 15px;
+  color: #4a4a4a;
+}
+
+.calendar .calendar__bg .calendar__content .tab-pane .owl-item .row .col-12 .row .calendar__col3 .calendar__film .calendar__text .cinemas__showHover a:hover {
+  text-decoration: none;
+}
+
+.calendar .calendar__bg .calendar__content .tab-pane .owl-item .row .col-12 .row .calendar__col3 .calendar__film .calendar__text .cinemas__showHover .cine__btn {
+  opacity: 0;
+  background: linear-gradient(to right, #e71a0f, #fa5238);
+  position: absolute;
+  top: 78%;
+  left: 4%;
+  display: block;
+  width: 215px;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 18px !important;
+  padding: 10px;
+  text-align: center;
+}
+
+.calendar .calendar__bg .calendar__content .owl-nav .owl-prev,
+.calendar .calendar__bg .calendar__content .owl-nav .owl-next {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  font-size: 150px;
+  outline: none;
+  width: 50px;
+  height: 100px;
+  z-index: 2;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  color: transparent;
+  opacity: 0.5;
+}
+
+.calendar .calendar__bg .calendar__content .owl-nav .owl-prev span,
+.calendar .calendar__bg .calendar__content .owl-nav .owl-next span {
+  display: none;
+}
+
+.calendar .calendar__bg .calendar__content .owl-nav .owl-prev {
+  left: -7%;
+  background-image: url(../../img/back-session.png);
+}
+
+.calendar .calendar__bg .calendar__content .owl-nav .owl-next {
+  right: -7%;
+  background-image: url(../../img/next-session.png);
+}
+
+.calendar .calendar__bg .calendar__content .owl-dots {
+  display: none;
+}
+
+@media screen and (max-width: 576px) {
+  .calendar .calendar__bg .calendar__content .nav .nav-item .nav-link.active {
+    font-size: 20px;
+  }
+  .calendar .calendar__bg .calendar__content .nav .nav-item .nav-link {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .calendar .calendar__bg .calendar__content .tab-pane .row .col-12 .row .calendar__col3 .calendar__film .calendar__picture .calendar__filmThumbnail .calendar__ageType {
+    font-size: 10px !important;
+    padding: 1px 3px !important;
+    top: 8px !important;
+    left: 8px !important;
+  }
+  .calendar .calendar__bg .calendar__content .tab-pane .row .col-12 .row .calendar__col3 .calendar__film .calendar__picture .calendar__filmThumbnail .calendar__avgPoint {
+    width: 44px !important;
+    top: 8px !important;
+    right: 8px !important;
+  }
+  .calendar .calendar__bg .calendar__content .tab-pane .row .col-12 .row .calendar__col3 .calendar__film .calendar__picture .calendar__filmThumbnail .calendar__avgPoint .calendar__point {
+    font-size: 15px !important;
+  }
+  .calendar .calendar__bg .calendar__content .tab-pane .row .col-12 .row .calendar__col3 .calendar__film .calendar__picture .calendar__filmThumbnail .calendar__avgPoint .calendar__star img {
+    max-width: 5px !important;
+  }
+  .calendar .calendar__bg .calendar__content .tab-pane .row .col-12 .row .calendar__col3 .calendar__film .calendar__picture .calendar__filmThumbnail .calendar__avgPoint.calendar__avgPoint-1 {
+    top: auto !important;
+  }
+}
+
+@media screen and (max-width: 1099px) {
+  .calendar .calendar__bg .calendar__content .tab-pane .row .col-12 .row .calendar__col3 .calendar__film .calendar__picture .calendar__filmThumbnail .calendar__ageType {
+    font-size: 10px !important;
+    padding: 1px 3px !important;
+    top: 8px !important;
+    left: 8px !important;
+  }
+  .calendar .calendar__bg .calendar__content .tab-pane .row .col-12 .row .calendar__col3 .calendar__film .calendar__picture .calendar__filmThumbnail .calendar__avgPoint {
+    width: 44px !important;
+    top: 8px !important;
+    right: 8px !important;
+  }
+  .calendar .calendar__bg .calendar__content .tab-pane .row .col-12 .row .calendar__col3 .calendar__film .calendar__picture .calendar__filmThumbnail .calendar__avgPoint .calendar__point {
+    font-size: 15px !important;
+  }
+  .calendar .calendar__bg .calendar__content .tab-pane .row .col-12 .row .calendar__col3 .calendar__film .calendar__picture .calendar__filmThumbnail .calendar__avgPoint .calendar__star img {
+    max-width: 5px !important;
+  }
+  .calendar .calendar__bg .calendar__content .tab-pane .row .col-12 .row .calendar__col3 .calendar__film .calendar__picture .calendar__filmThumbnail .calendar__avgPoint.calendar__avgPoint-1 {
+    top: auto !important;
+  }
+  .calendar .calendar__bg .calendar__content .owl-nav .owl-prev,
+  .calendar .calendar__bg .calendar__content .owl-nav .owl-next {
+    display: none;
+  }
+}
+
+.homeMovies .homeMovies__content {
+  max-width: 940px;
+  margin: auto;
+  padding-top: 120px;
+  background: url(../../img/back-news.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.homeMovies .homeMovies__content .homeMovies__bg {
+  background-color: #ffffff;
+}
+
+.homeMovies .homeMovies__content .homeMovies__bg .row {
+  width: 100%;
+  margin: 0;
+}
+
+.homeMovies .homeMovies__content .homeMovies__bg .row .col-12 .parentListPCinemas {
+  float: left;
+  padding: 0;
+  min-height: 705px;
+  max-width: 92px;
+  border: 1px solid #ebebec;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.homeMovies .homeMovies__content .homeMovies__bg .row .col-12 .parentListPCinemas .nav-pills .nav-link.active {
+  background-color: transparent;
+  color: transparent;
+  opacity: 1;
+}
+
+.homeMovies .homeMovies__content .homeMovies__bg .row .col-12 .parentListPCinemas .nav-pills .nav-link {
+  opacity: 0.5;
+  padding: 20px;
+  position: relative;
+}
+
+.homeMovies .homeMovies__content .homeMovies__bg .row .col-12 .parentListPCinemas .nav-pills .nav-link:hover {
+  opacity: 1;
+}
+
+.homeMovies .homeMovies__content .homeMovies__bg .row .col-12 .parentListPCinemas .nav-pills .nav-link::after {
+  content: " ";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%);
+  width: calc(100% - 40px);
+  border-bottom: 1px solid rgba(238, 238, 238, 0.88);
+}
+
+.homeMovies .homeMovies__content .homeMovies__bg .row .col-12 .parentListPCinemas .nav-pills .nav-link img {
+  width: 50px;
+}
+
+.homeMovies .homeMovies__content .homeMovies__bg .row .col-12 .listCinemas {
+  float: left;
+  height: 705px;
+  min-height: 705px;
+  border-top: 1px solid #ebebec;
+  border-bottom: 1px solid #ebebec;
+  width: 30%;
+  padding: 0;
+}
+
+.homeMovies .homeMovies__content .homeMovies__bg .row .col-12 .listCinemas .tab-content .tab-pane.active {
+  opacity: 1;
+}
+
+.homeMovies .homeMovies__content .homeMovies__bg .row .col-12 .listCinemas .tab-content .tab-pane .homeMovies__scope .homeMovies__cinema {
+  display: block;
+  position: relative;
+  padding: 20px 15px 15px 20px;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.homeMovies .homeMovies__content .homeMovies__bg .row .col-12 .listCinemas .tab-content .tab-pane .homeMovies__scope .homeMovies__cinema::after {
+  content: " ";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%);
+  width: calc(100% - 40px);
+  border-bottom: 1px solid rgba(238, 238, 238, 0.88);
+}
+
+.homeMovies .homeMovies__content .homeMovies__bg .row .col-12 .listCinemas .tab-content .tab-pane .homeMovies__scope .homeMovies__cinema:hover {
+  opacity: 1;
+}
+
+.homeMovies .homeMovies__content .homeMovies__bg .row .col-12 .listCinemas .tab-content .tab-pane .homeMovies__scope .homeMovies__cinema.active {
+  opacity: 1;
+}
+
+.homeMovies .homeMovies__content .homeMovies__bg .row .col-12 .listCinemas .tab-content .tab-pane .homeMovies__scope .homeMovies__cinema .homeMovies__picture {
+  float: left;
+  width: 50px;
+}
+
+.homeMovies .homeMovies__content .homeMovies__bg .row .col-12 .listCinemas .tab-content .tab-pane .homeMovies__scope .homeMovies__cinema .homeMovies__picture img {
+  width: 100%;
+}
+
+.homeMovies .homeMovies__content .homeMovies__bg .row .col-12 .listCinemas .tab-content .tab-pane .homeMovies__scope .homeMovies__cinema .homeMovies__text {
+  padding-left: 60px;
+}
+
+.homeMovies .homeMovies__content .homeMovies__bg .row .col-12 .listCinemas .tab-content .tab-pane .homeMovies__scope .homeMovies__cinema .homeMovies__text p {
+  line-height: 1.4;
+  margin: 0;
+}
+
+.homeMovies .homeMovies__content .homeMovies__bg .row .col-12 .listCinemas .tab-content .tab-pane .homeMovies__scope .homeMovies__cinema .homeMovies__text .homeMovies__nameMovieCinema {
+  font-size: 14px;
+  font-weight: 500;
+  color: #000000;
+}
+
+.homeMovies .homeMovies__content .homeMovies__bg .row .col-12 .listCinemas .tab-content .tab-pane .homeMovies__scope .homeMovies__cinema .homeMovies__text .homeMovies__nameMovieCinema .homeMovies__colorCinema {
+  color: #fb4226;
+  font-weight: 600;
+}
+
+.homeMovies .homeMovies__content .homeMovies__bg .row .col-12 .listCinemas .tab-content .tab-pane .homeMovies__scope .homeMovies__cinema .homeMovies__text .homeMovies__nameMovieCinema .homeMovies__colorCinema.BHD {
+  color: #8bc541;
+}
+
+.homeMovies .homeMovies__content .homeMovies__bg .row .col-12 .listCinemas .tab-content .tab-pane .homeMovies__scope .homeMovies__cinema .homeMovies__text .homeMovies__nameMovieCinema .homeMovies__colorCinema.GLX {
+  color: #ff6600;
+}
+
+.homeMovies .homeMovies__content .homeMovies__bg .row .col-12 .listCinemas .tab-content .tab-pane .homeMovies__scope .homeMovies__cinema .homeMovies__text .homeMovies__nameMovieCinema .homeMovies__colorCinema.DDC {
+  color: #9c9c9c;
+}
+
+.homeMovies .homeMovies__content .homeMovies__bg .row .col-12 .listCinemas .tab-content .tab-pane .homeMovies__scope .homeMovies__cinema .homeMovies__text .homeMovies__nameMovieCinema .homeMovies__colorCinema.MegaGS {
+  color: #e5a813;
+}
+
+.homeMovies .homeMovies__content .homeMovies__bg .row .col-12 .listCinemas .tab-content .tab-pane .homeMovies__scope .homeMovies__cinema .homeMovies__text .homeMovies__nameMovieCinema .homeMovies__colorCinema.Dcine {
+  color: #000000;
+}
+
+.homeMovies .homeMovies__content .homeMovies__bg .row .col-12 .listCinemas .tab-content .tab-pane .homeMovies__scope .homeMovies__cinema .homeMovies__text .homeMovies__nameMovieCinema .homeMovies__colorCinema.Lotte {
+  color: #ca4137;
+}
+
+.homeMovies .homeMovies__content .homeMovies__bg .row .col-12 .listCinemas .tab-content .tab-pane .homeMovies__scope .homeMovies__cinema .homeMovies__text .homeMovies__infoMovieCinema {
+  font-size: 12px;
+  color: #949494;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.homeMovies .homeMovies__content .homeMovies__bg .row .col-12 .listCinemas .tab-content .tab-pane .homeMovies__scope .homeMovies__cinema .homeMovies__text .homeMovies__showingDetailCinema a {
+  font-size: 12px;
+  font-weight: 600;
+  color: #fb4226;
+  text-decoration: none;
+}
+
+.homeMovies .homeMovies__content .homeMovies__bg .row .col-12 .listCinemas .tab-content.selectScroll {
+  height: 705px;
+  overflow-y: scroll;
+}
+
+.homeMovies .homeMovies__content .homeMovies__bg .row .col-12 .listCinemas .tab-content.selectScroll::-webkit-scrollbar {
+  width: 4px;
+}
+
+.homeMovies .homeMovies__content .homeMovies__bg .row .col-12 .listCinemas .tab-content.selectScroll:hover {
+  height: 705px;
+  overflow-y: scroll;
+}
+
+.homeMovies .homeMovies__content .homeMovies__bg .row .col-12 .listCinemas .tab-content.selectScroll:hover::-webkit-scrollbar {
+  width: 4px;
+  display: block;
+}
+
+.homeMovies .homeMovies__content .homeMovies__bg .row .col-12 .listCinemas .tab-content.selectScroll:hover::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+.homeMovies .homeMovies__content .homeMovies__bg .row .col-12 .listCinemas .tab-content.selectScroll:hover::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+.homeMovies .homeMovies__content .homeMovies__bg .row .col-12 .listMovies {
+  float: left;
+  height: 705px;
+  min-height: 705px;
+  width: calc(100% - 30% - 92px);
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border: 1px solid rgba(238, 238, 238, 0.88);
+}
+
+.homeMovies .homeMovies__content .homeMovies__bg .row .col-12 .listMovies .homeMovies__contentCinema {
+  font-size: 15px;
+  font-family: "SF Medium", sans-serif;
+  font-weight: 600;
+}
+
+.homeMovies .homeMovies__content .homeMovies__bg .row .col-12 .listMovies .homeMovies__contentCinema .listFilm__info {
+  position: relative;
+  padding: 20px;
+}
+
+.homeMovies .homeMovies__content .homeMovies__bg .row .col-12 .listMovies .homeMovies__contentCinema .listFilm__info .listFilm__top {
+  position: relative;
+  margin-bottom: 9px;
+}
+
+.homeMovies .homeMovies__content .homeMovies__bg .row .col-12 .listMovies .homeMovies__contentCinema .listFilm__info .listFilm__top img {
+  float: left;
+  width: 50px;
+  height: 50px;
+}
+
+.homeMovies .homeMovies__content .homeMovies__bg .row .col-12 .listMovies .homeMovies__contentCinema .listFilm__info .listFilm__top .listFilm__top--right {
+  padding-left: 66px;
+  width: 100%;
+}
+
+.homeMovies .homeMovies__content .homeMovies__bg .row .col-12 .listMovies .homeMovies__contentCinema .listFilm__info .listFilm__top .listFilm__top--right p {
+  margin-bottom: 0;
+}
+
+.homeMovies .homeMovies__content .homeMovies__bg .row .col-12 .listMovies .homeMovies__contentCinema .listFilm__info .listFilm__top .listFilm__top--right .listFilm__age {
+  background-color: #fb4226;
+  color: #ffffff;
+  border-radius: 4px;
+  padding: 0 5px;
+  float: left;
+  margin-right: 5px;
+  font-size: 12px;
+  width: 33px;
+  text-align: center;
+}
+
+.homeMovies .homeMovies__content .homeMovies__bg .row .col-12 .listMovies .homeMovies__contentCinema .listFilm__info .listFilm__top .listFilm__top--right .listFilm__title {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #1f2e46;
+  line-height: 22px;
+  font-weight: 700;
+}
+
+.homeMovies .homeMovies__content .homeMovies__bg .row .col-12 .listMovies .homeMovies__contentCinema .listFilm__info .listFilm__top .listFilm__top--right .listFilm__score {
+  line-height: 1.7;
+  font-size: 12px;
+  color: #949494;
+}
+
+.homeMovies .homeMovies__content .homeMovies__bg .row .col-12 .listMovies .homeMovies__contentCinema .listFilm__info .film_time .listFilm__version {
+  float: left;
+  width: 100%;
+  font-size: 16px;
+  color: #1f2e46;
+  margin-bottom: 5px;
+  font-weight: 600;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.homeMovies .homeMovies__content .homeMovies__bg .row .col-12 .listMovies .homeMovies__contentCinema .listFilm__info .film_time .listFilm__time {
+  margin-bottom: 15px;
+}
+
+.homeMovies .homeMovies__content .homeMovies__bg .row .col-12 .listMovies .homeMovies__contentCinema .listFilm__info .film_time .listFilm__time .time__content {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.homeMovies .homeMovies__content .homeMovies__bg .row .col-12 .listMovies .homeMovies__contentCinema .listFilm__info .film_time .listFilm__time .time__content a {
+  font-weight: 400;
+  text-decoration: none;
+  padding: 10px 5px;
+  transition: all 0.2s;
+  text-align: center;
+  background-color: rgba(246, 246, 246, 0.5);
+  border-radius: 7px;
+  color: #949494;
+  border: 1px solid #e4e4e4;
+  font-weight: 500;
+  text-align: center;
+}
+
+.homeMovies .homeMovies__content .homeMovies__bg .row .col-12 .listMovies .homeMovies__contentCinema .listFilm__info .film_time .listFilm__time .time__content a .time__start {
+  font-size: 18px;
+  color: #00ff00;
+  font-weight: 600;
+}
+
+.homeMovies .homeMovies__content .homeMovies__bg .row .col-12 .listMovies .homeMovies__contentCinema .listFilm__info .film_time .listFilm__time .time__content a .time__start:hover {
+  color: #ff0000;
+  transition: all .5s;
+}
+
+.homeMovies .homeMovies__content .homeMovies__bg .row .col-12 .listMovies .homeMovies__contentCinema .listFilm__info::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 50%;
+  width: calc(100% - 40px);
+  transform: translateX(-50%);
+  border-bottom: 1px solid #ccc;
+  border-color: rgba(238, 238, 238, 0.88);
+}
+
+@media screen and (max-width: 768px) {
+  .homeMovies .homeMovies__content .homeMovies__bg .col-sm-12 {
+    width: 100% !important;
+    border: none !important;
+  }
+  .homeMovies .homeMovies__content .homeMovies__bg .parentListPCinemas {
+    width: 100%;
+  }
+}
+
+.news .news__content {
+  max-width: 940px;
+  margin: auto;
+  padding-top: 120px;
+  background: url(../../img/back-news.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.news .news__content .news__bg .nav {
+  justify-content: center;
+}
+
+.news .news__content .news__bg .nav .nav-item .nav-link.active {
+  background: none;
+  color: #fb4226;
+  font-size: 24px;
+}
+
+.news .news__content .news__bg .nav .nav-item .nav-link {
+  color: #000000;
+  font-size: 20px;
+  transition: all 0.2s;
+  line-height: 24px;
+}
+
+.news .news__content .news__bg .nav .nav-item .nav-link:hover {
+  font-size: 24px;
+}
+
+.news .news__content .news__bg .tab-content .tab-pane .row {
+  width: 100%;
+  margin: 0;
+  padding: 0 15px;
+}
+
+.news .news__content .news__bg .tab-content .tab-pane .row .news__col {
+  float: left;
+  padding: 7.5px;
+  margin: 0 0 20px;
+  font-size: 14px;
+  width: 50%;
+}
+
+.news .news__content .news__bg .tab-content .tab-pane .row .news__col .news__picture {
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.news .news__content .news__bg .tab-content .tab-pane .row .news__col .news__picture img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.news .news__content .news__bg .tab-content .tab-pane .row .news__col .news__text h6 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  height: 42px;
+  font-weight: 600;
+  font-family: 'SF Medium', sans-serif;
+  transition: all 0.2s;
+  margin-bottom: 5px;
+  line-height: 20px;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.news .news__content .news__bg .tab-content .tab-pane .row .news__col .news__text h6:hover {
+  color: #fb4226;
+}
+
+.news .news__content .news__bg .tab-content .tab-pane .row .news__col .news__text .content {
+  text-align: justify;
+  font-size: 13px;
+  color: #4a4a4a;
+  padding: 0 5px 0 0;
+  line-height: 19px;
+  height: 55px;
+  margin-bottom: 15px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.news .news__content .news__bg .tab-content .tab-pane .row .news__col .news__blockIcon .news__wrapIcon {
+  display: inline-block;
+  margin-right: 25px;
+  cursor: pointer;
+}
+
+.news .news__content .news__bg .tab-content .tab-pane .row .news__col .news__blockIcon .news__wrapIcon img {
+  width: 18px;
+  height: auto;
+  margin: 2px 10px 0 0;
+  transition: all 0.2s;
+}
+
+.news .news__content .news__bg .tab-content .tab-pane .row .news__col .news__blockIcon .news__wrapIcon .news__amount {
+  display: inline-block;
+  font-size: 12px;
+  color: #bbbbbb;
+  margin: 0;
+}
+
+.news .news__content .news__bg .tab-content .tab-pane .row .news__col .news__blockIcon .news__wrapIcon:hover img {
+  transform: scale(1.1);
+}
+
+.news .news__content .news__bg .tab-content .tab-pane .row .news__col.news__col-4 {
+  width: 33.33%;
+}
+
+.news .news__content .news__bg .tab-content .tab-pane .row .news__col.news__col-4.news .row {
+  width: 100%;
+  margin: 0;
+}
+
+.news .news__content .news__bg .tab-content .tab-pane .row .news__col.news__col-4.news .row .news__col-12 .news__picture {
+  float: left;
+  width: 50px;
+  margin-right: 10px;
+}
+
+.news .news__content .news__bg .tab-content .tab-pane .row .news__col.news__col-4.news .row .news__col-12 .news__picture img {
+  width: 100%;
+}
+
+.news .news__content .news__bg .tab-content .tab-pane .row .news__col.news__col-4.news .row .news__col-12 .news__Title {
+  font-size: 16px;
+  opacity: 0.7;
+  line-height: 20px;
+  height: 42px;
+  margin-bottom: 5px;
+  transition: all 0.2s;
+  cursor: pointer;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.news .news__content .news__bg .tab-content .tab-pane .row .news__col.news__col-4.news .row .news__col-12 .news__Title:hover {
+  color: #fb4226;
+}
+
+.news .news__content .news__bg .tab-content .tab-pane .news__button {
+  margin-bottom: 35px;
+  text-align: center;
+}
+
+.news .news__content .news__bg .tab-content .tab-pane .news__button button {
+  font-size: 14px;
+  color: #949494;
+  background-color: #ffffff;
+  border-radius: 5px;
+  border: 1px solid #949494;
+  padding: 7px 25px;
+  margin-top: 35px;
+  margin-bottom: 20px;
+  transition: all 0.2s;
+  outline: none;
+}
+
+.news .news__content .news__bg .tab-content .tab-pane .news__button button:hover {
+  color: #ffffff;
+  background-color: #fb4226;
+  border: 1px solid #ffffff;
+}
+
+@media screen and (max-width: 768px) {
+  .news .news__content .news__bg .nav .nav-item .nav-link.active {
+    font-size: 18px;
+  }
+  .news .news__content .news__bg .nav .nav-item .nav-link {
+    font-size: 16px;
+    line-height: 18px;
+  }
+  .news .news__content .news__bg .tab-content .tab-pane .row {
+    padding: 0 10px;
+  }
+  .news .news__content .news__bg .tab-content .tab-pane .row .col-ms-12 {
+    width: 100% !important;
+    padding: 0;
+  }
+  .news .news__content .news__bg .tab-content .tab-pane .row .col-ms-12 .news__text .content, .news .news__content .news__bg .tab-content .tab-pane .row .col-ms-12 .news__text h6 {
+    height: auto;
+  }
+  .news .news__content .news__bg .tab-content .tab-pane .row .news .row {
+    padding: 0;
+  }
+}
+
+.application .row {
+  width: 100%;
+  margin: 0;
+}
+
+.application .row .col-12 {
+  background-image: url(https://tix.vn/app/assets/img/icons/backapp.jpg);
+  background-size: contain;
+  padding: 120px 0 80px 0;
+}
+
+.application .row .col-12 .application__content {
+  max-width: 940px;
+  margin: auto;
+}
+
+.application .row .col-12 .application__content .row {
+  width: 100%;
+  margin: 0;
+}
+
+.application .row .col-12 .application__content .row .application__left {
+  color: #ffffff;
+}
+
+.application .row .col-12 .application__content .row .application__left h2 {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.application .row .col-12 .application__content .row .application__left button {
+  background-color: #fb4226;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: 700;
+  border: none;
+}
+
+.application .row .col-12 .application__content .row .application__left .application__textAppUnder {
+  padding-top: 10px;
+  font-size: 14px;
+}
+
+.application .row .col-12 .application__content .row .application__left .application__textAppUnder span {
+  cursor: pointer;
+  border-bottom: 1px solid #ffffff;
+}
+
+.application .row .col-12 .application__content .row .application__right {
+  position: relative;
+  padding: 0;
+}
+
+.application .row .col-12 .application__content .row .application__right .application__phone-img {
+  padding: 0 28%;
+}
+
+.application .row .col-12 .application__content .row .application__right img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.application .row .col-12 .application__content .row .application__right .application__slick-slider {
+  position: absolute;
+  padding: 1.5% 29.3% 0 29.3%;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.application .row .col-12 .application__content .row .application__right .application__slick-slider .application__draggable {
+  position: relative;
+  display: block;
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+
+.application .row .col-12 .application__content .row .application__right .application__slick-slider .application__draggable .owl-stage-outer {
+  border-radius: 20px;
+}
+
+.application .row .col-12 .application__content .row .application__right .application__slick-slider .application__draggable .application__picture img {
+  width: 100%;
+}
+
+.application .row .col-12 .application__content .row .application__right .application__slick-slider .application__draggable .owl-nav, .application .row .col-12 .application__content .row .application__right .application__slick-slider .application__draggable .owl-dots {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .application .row .col-12 .application__content .row .col-sm-12.application__left {
+    text-align: center;
+  }
+  .application .row .col-12 .application__content .row .col-sm-12.application__left h2 {
+    font-size: 25.2px;
+  }
+  .application .row .col-12 .application__content .row .col-sm-12.application__left p {
+    font-size: 14px;
+  }
+}
+
+footer {
+  background-color: #222222;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+footer .footer__content {
+  max-width: 940px;
+  margin: auto;
+}
+
+footer .footer__content .footer__rowFirst {
+  width: 100%;
+  margin: 0;
+}
+
+footer .footer__content .footer__rowFirst .col-md-4 .footer__title {
+  font-size: 11.2px;
+  color: #ffffff;
+}
+
+footer .footer__content .footer__rowFirst .footer__left .row .col-sm-6 .footer__text {
+  font-size: 12px;
+  font-weight: 600;
+  color: #949494;
+  line-height: 2.3;
+  cursor: pointer;
+  margin: 0;
+  transition: all 0.2s;
+}
+
+footer .footer__content .footer__rowFirst .footer__left .row .col-sm-6 .footer__text:hover {
+  color: #ffffff;
+}
+
+footer .footer__content .footer__rowFirst .footer__middle .row .col-12 {
+  margin-bottom: 15px;
+}
+
+footer .footer__content .footer__rowFirst .footer__middle .row .col-12 a img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+footer .footer__content .footer__rowFirst .footer__right .row .col-md-6 {
+  text-align: center;
+}
+
+footer .footer__content .footer__rowFirst .footer__right .row .col-md-6 a img {
+  height: 30px;
+  width: auto;
+  margin: 5px;
+}
+
+footer .footer__content .footer__hr {
+  margin: 20px 0;
+  border-top: 1px solid #4a4a4a;
+}
+
+footer .footer__content .footer__rowSecond {
+  width: 100%;
+  margin: 0;
+}
+
+footer .footer__content .footer__rowSecond .footer__img {
+  padding: 0;
+}
+
+footer .footer__content .footer__rowSecond .col-sm-1 .footer__logo img {
+  width: 80px;
+  height: auto;
+  border-radius: 8px;
+}
+
+footer .footer__content .footer__rowSecond .col-sm-9 {
+  font-size: 12px;
+}
+
+footer .footer__content .footer__rowSecond .col-sm-9 h6 {
+  color: #ffffff;
+  font-size: 12px;
+  margin: 0;
+  line-height: 1.8;
+}
+
+footer .footer__content .footer__rowSecond .col-sm-9 p {
+  color: #949494;
+  margin: 0;
+  line-height: 1.8;
+}
+
+footer .footer__content .footer__rowSecond .col-sm-9 p .footer__email {
+  color: #ff0000;
+  text-decoration: none;
+}
+
+footer .footer__content .footer__rowSecond .col-sm-2 .footer__BoCo {
+  text-align: right;
+}
+
+footer .footer__content .footer__rowSecond .col-sm-2 .footer__BoCo img {
+  width: 130px;
+}
+
+@media screen and (max-width: 768px) {
+  footer .footer__content .footer__rowFirst {
+    text-align: center;
+  }
+  footer .footer__content .footer__rowFirst .footer__title {
+    display: none !important;
+  }
+  footer .footer__content .footer__rowFirst .footer__left .footer__hideOnMobile {
+    display: none;
+  }
+  footer .footer__content .footer__rowFirst .footer__left .footer__onMobile .footer__text {
+    display: inline-block;
+    margin: 5px !important;
+  }
+  footer .footer__content .footer__rowFirst .footer__middle {
+    display: none;
+  }
+  footer .footer__content .footer__rowFirst .footer__right .footer__hideOnMobile {
+    display: none;
+  }
+  footer .footer__content .footer__rowSecond {
+    text-align: center !important;
+  }
+  footer .footer__content .footer__rowSecond .footer__BoCo {
+    text-align: center !important;
+  }
+  footer .footer__content .footer__rowSecond .footer__img {
+    margin-bottom: 20px;
+  }
+}
+/*# sourceMappingURL=main.css.map */

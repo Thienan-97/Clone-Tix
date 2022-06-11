@@ -1,0 +1,368 @@
+.calendar {
+    .calendar__bg {
+        padding: spacing(8) 0 0;
+        .calendar__content {
+            max-width: spacing(94);
+            margin: auto;
+            .nav-pills {
+                // chỉnh phần đang chiếu và sắp chiếu
+                display: flex;
+                justify-content: center;
+                margin-bottom: spacing(3) !important;
+                .nav-item {
+                    .nav-link {
+                        font-family: "SF Medium", sans-serif;
+                        background-color: $color-white-0;
+                        color: $color-black-0;
+                        font-size: $fs-5;
+                        font-weight: $fw-bold;
+                        line-height: spacing(2.4);
+                        transition: all 0.2s;
+                        &.active {
+                            color: $color-red-3;
+                            font-size: $fs-6;
+                        }
+                        &:hover {
+                            font-size: $fs-6;
+                        }
+                    }
+                }
+            }
+            .tab-pane {
+                .owl-item {
+                    .row {
+                        // khai báo width và margin để khỏi bị dính thằng carousel thằng next
+                        width: 100%;
+                        margin: 0;
+                        .col-12 {
+                            padding: 0;
+                            .row {
+                                width: 100%;
+                                margin: 0;
+                                .calendar__col3 {
+                                    // khai báo khoảng cách giữa các hình
+                                    padding: 0 spacing(1);
+                                    width: 25%;
+                                    .calendar__film {
+                                        margin-bottom: spacing(2.5);
+                                        cursor: pointer;
+                                        &:hover .calendar__picture .calendar__filmThumbnail .calendar__overlay{
+                                            opacity: 1;
+                                        }
+                                        &:hover{
+                                            .calendar__text{
+                                                .calendar__nameFilm{
+                                                    opacity: 0;
+                                                }
+                                                .calendar__time{
+                                                    opacity: 0;
+                                                }
+                                                .cinemas__showHover{
+                                                    .cine__btn{
+                                                        opacity: 1;
+                                                    }
+                                                }
+                                                
+                                            }
+                                        }
+                                        .calendar__picture {
+                                            .calendar__filmThumbnail {
+                                                display: block;
+                                                background-repeat: no-repeat;
+                                                background-size: 100% auto;
+                                                padding-top: 148%;
+                                                width: 100%;
+                                                margin-bottom: spacing(1);
+                                                border-radius: $border-radius-4;
+
+                                                // cho cái thằng hình làm thằng cha
+                                                position: relative;
+                                                .calendar__overlay {
+                                                    position: absolute;
+                                                    top: 0;
+                                                    background: linear-gradient(to top, #000, transparent 100%);
+                                                    border-radius: $border-radius-4;
+                                                    width: 100%;
+                                                    height: 100%;
+                                                    opacity: 0;
+                                                    transition: all 0.2s;
+                                                    .playTrailer {
+                                                        background: none;
+                                                        border: none;
+                                                        position: absolute;
+                                                        // xét vị trí nút play
+                                                        top: 50%;
+                                                        left: 50%;
+                                                        transform: translate(-50%, -50%);
+                                                        width: spacing(5);
+                                                        height: spacing(5);
+                                                        &:hover {
+                                                            opacity: 0.7;
+                                                        }
+                                                    }
+                                                }
+                                                // .showHover{
+                                                //     position: absolute;
+                                                //     top: 0;
+                                                //     left: 0;
+                                                //     display: block;
+                                                //     width: 100%;
+                                                //     border-radius: 4px;
+                                                //     color: #fff;
+                                                //     font-size: 18px!important;
+                                                //     padding: 10px;
+                                                //     text-align: center;
+                                                //     background: linear-gradient(to left,#fb4226,#ce3017 100%);
+                                                //     opacity: 0;
+                                                // }
+                                                .calendar__avgPoint {
+                                                    font-family: "SF Medium", sans-serif;
+                                                    font-weight: $fw-bold;
+                                                    background-color: rgba(12, 27, 54, 0.8);
+                                                    border: 1px solid $color-black-1;
+                                                    border-radius: $border-radius-4;
+                                                    line-height: 1;
+
+                                                    // cho nó gọn lại = nội dung
+                                                    display: inline-block;
+
+                                                    padding: spacing(0.2);
+                                                    width: spacing(5.4);
+
+                                                    position: absolute;
+                                                    top: spacing(1.2);
+                                                    right: spacing(1.2);
+                                                    .calendar__point {
+                                                        font-size: $fs-5;
+                                                        text-align: center;
+                                                        color: $color-white-0;
+                                                        margin: 0;
+                                                    }
+                                                    .calendar__star {
+                                                        text-align: center;
+                                                        margin: 0;
+                                                        img {
+                                                            display: inline-block;
+                                                            max-width: spacing(0.8);
+                                                            width: 100%;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        .calendar__text {
+                                            .calendar__nameFilm {
+                                                font-family: "SF Medium", sans-serif;
+                                                font-size: $fs-0;
+                                                font-weight: $fw-bold;
+                                                line-height: 22px;
+                                                margin: 0;
+                                                height: spacing(4.2);
+                                                max-height: spacing(4.2);
+
+                                                overflow: hidden;
+                                                -o-text-overflow: ellipsis;
+                                                text-overflow: ellipsis;
+                                                display: -webkit-box;
+                                                -webkit-line-clamp: 2;
+                                                -webkit-box-orient: vertical;
+                                                .calendar__nameFilm1 {
+                                                    font-size: 14px;
+                                                    background-color: #fb4226;
+                                                    border-radius: 4px;
+                                                    padding: 0 5px;
+                                                    color: #fff;
+                                                    min-width: 33px;
+                                                    text-align: center;
+                                                    display: inline-block;
+                                                    margin-right: 8px;
+                                                }
+                                                .ageType-general{
+                                                    background-color: #00ac4d;
+                                                }
+                                            }
+                                            .calendar__time {
+                                                font-size: $fs-3;
+                                                font-weight: $fw-medium;
+                                                margin: spacing(0.8) 0 spacing(1.5);
+                                                color: $color-gray-0;
+                                            }
+                                            .cinemas__showHover {
+                                                a:hover{
+                                                    text-decoration: none;
+                                                }
+                                                .cine__btn {
+                                                    opacity: 0;
+                                                    background: linear-gradient(to right, $color-red-1, $color-red-3);
+                                                    position: absolute;
+                                                    top: 78%;
+                                                    left: 4%;
+                                                    display: block;
+                                                    width: 215px;
+                                                    border-radius: 4px;
+                                                    color: #fff;
+                                                    font-size: 18px !important;
+                                                    padding: 10px;
+                                                    text-align: center;
+
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .owl-nav {
+                .owl-prev,
+                .owl-next {
+                    position: absolute;
+                    top: 45%;
+                    transform: translateY(-50%);
+                    font-size: $fs-12;
+
+                    // bỏ cái border khi nhấn vô nó
+                    outline: none;
+
+                    width: spacing(5);
+                    height: spacing(10);
+                    z-index: 2;
+
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    color: transparent;
+                    opacity: 0.5;
+                    span {
+                        display: none;
+                    }
+                }
+                .owl-prev {
+                    left: -7%;
+                    background-image: url(../../img/back-session.png);
+                }
+                .owl-next {
+                    right: -7%;
+                    background-image: url(../../img/next-session.png);
+                }
+            }
+            .owl-dots {
+                display: none;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: getBreakpoint("small")) {
+    .calendar {
+        .calendar__bg {
+            .calendar__content {
+                .nav {
+                    .nav-item {
+                        .nav-link.active {
+                            font-size: 20px;
+                        }
+                        .nav-link {
+                            font-size: 16px;
+                            line-height: 20px;
+                        }
+                    }
+                }
+                .tab-pane {
+                    .row {
+                        .col-12 {
+                            .row {
+                                .calendar__col3 {
+                                    .calendar__film {
+                                        .calendar__picture {
+                                            .calendar__filmThumbnail {
+                                                .calendar__ageType {
+                                                    font-size: 10px !important;
+                                                    padding: 1px 3px !important;
+                                                    top: 8px !important;
+                                                    left: 8px !important;
+                                                }
+                                                .calendar__avgPoint {
+                                                    width: 44px !important;
+                                                    top: 8px !important;
+                                                    right: 8px !important;
+                                                    .calendar__point {
+                                                        font-size: 15px !important;
+                                                    }
+                                                    .calendar__star {
+                                                        img {
+                                                            max-width: 5px !important;
+                                                        }
+                                                    }
+                                                }
+                                                .calendar__avgPoint.calendar__avgPoint-1 {
+                                                    top: auto !important;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1099px) {
+    .calendar {
+        .calendar__bg {
+            .calendar__content {
+                .tab-pane {
+                    .row {
+                        .col-12 {
+                            .row {
+                                .calendar__col3 {
+                                    .calendar__film {
+                                        .calendar__picture {
+                                            .calendar__filmThumbnail {
+                                                .calendar__ageType {
+                                                    font-size: 10px !important;
+                                                    padding: 1px 3px !important;
+                                                    top: 8px !important;
+                                                    left: 8px !important;
+                                                }
+                                                .calendar__avgPoint {
+                                                    width: 44px !important;
+                                                    top: 8px !important;
+                                                    right: 8px !important;
+                                                    .calendar__point {
+                                                        font-size: 15px !important;
+                                                    }
+                                                    .calendar__star {
+                                                        img {
+                                                            max-width: 5px !important;
+                                                        }
+                                                    }
+                                                }
+                                                .calendar__avgPoint.calendar__avgPoint-1 {
+                                                    top: auto !important;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .owl-nav {
+                    .owl-prev,
+                    .owl-next {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
